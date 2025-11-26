@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Roshan Maharjan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #050510;
+            --text: #333;
+            --text-light: #666;
+            --accent: #007bff;
+            /* Professional Blue */
+            --bg: #f4f4f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .header-left h2 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .contact-info div {
+            margin-bottom: 5px;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Content */
+        .job,
+        .edu-item {
+            margin-bottom: 15px;
+        }
+
+        .job-header,
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .job h3,
+        .edu-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .company,
+        .school {
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f0f7ff;
+            color: var(--accent);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Buttons (Hide in Print) */
+        .actions {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Roshan Maharjan</h1>
+                <h2>AI Engineer</h2>
+            </div>
+            <div class="contact-info">
+                <div>roshanmaharjan737@gmail.com <i class="fas fa-envelope"></i></div>
+                <div>Kathmandu, Nepal <i class="fas fa-map-marker-alt"></i></div>
+                <div>github.com/Shadow-xD-l <i class="fab fa-github"></i></div>
+            </div>
+        </header>
+
+        <section>
+            <h3 class="section-title">Profile</h3>
+            <p>Forward-thinking AI Engineer pursuing a B-Tech in AI. Passionate about building the bridge between data
+                and destiny, with a strong foundation in Python, Machine Learning, and Data Science. Eager to
+                collaborate on the next frontier of Artificial Intelligence.</p>
+        </section>
+
+        <section>
+            <h3 class="section-title">Education</h3>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <h3>B-Tech in AI</h3>
+                    <span class="date">2025 - Present</span>
+                </div>
+                <div class="school">National Institute of Engineering and Technology, Nepal</div>
+                <p>Focus on Artificial Intelligence & Data Science.</p>
+            </div>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <h3>High School (Science)</h3>
+                    <span class="date">2023 - 2025</span>
+                </div>
+                <div class="school">Capitol Hill College</div>
+                <p>Optional subject: Computer Science.</p>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">TensorFlow</div>
+                <div class="skill-tag">PyTorch</div>
+                <div class="skill-tag">Transformers</div>
+                <div class="skill-tag">OpenCV</div>
+                <div class="skill-tag">Docker</div>
+                <div class="skill-tag">Git/GitHub</div>
+                <div class="skill-tag">Data Science</div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Projects</h3>
+            <div class="job">
+                <div class="job-header">
+                    <h3>Portfolio Website</h3>
+                    <span class="date">2025</span>
+                </div>
+                <p>Designed and developed a modern, responsive portfolio website using HTML, CSS, and JavaScript with
+                    advanced animations and glassmorphism design.</p>
+            </div>
+            <!-- Add more projects here as they are developed -->
+        </section>
+    </div>
+
+    <div class="actions">
+        <a href="index.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+        <button onclick="window.print()" class="btn btn-primary"><i class="fas fa-download"></i> Save as PDF</button>
+    </div>
+
+</body>
+
+</html>

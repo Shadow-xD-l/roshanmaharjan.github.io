@@ -29,41 +29,47 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Glitch Text Effect (Hacker Style Lock-in)
+    // Glitch Text Effect (Hacker Style Lock-in) & Dynamic Cycling
     const glitchText = document.querySelector('.glitch-text');
     if (glitchText) {
-        const originalText = glitchText.getAttribute('data-text');
+        const roles = ["AI Engineer", "Software Developer", "UI/UX Designer", "Data Scientist", "Tech Innovator"];
+        let roleIndex = 0;
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*';
 
-        glitchText.addEventListener('mouseover', () => {
+        const animateText = (newText) => {
             let iterations = 0;
-
-            // Clear any existing interval to prevent bugs if hovered quickly
-            if (glitchText.dataset.interval) {
-                clearInterval(parseInt(glitchText.dataset.interval));
-            }
-
             const interval = setInterval(() => {
-                glitchText.innerText = originalText
+                glitchText.innerText = newText
                     .split('')
                     .map((letter, index) => {
                         if (index < iterations) {
-                            return originalText[index];
+                            return newText[index];
                         }
                         return chars[Math.floor(Math.random() * chars.length)];
                     })
                     .join('');
 
-                if (iterations >= originalText.length) {
+                if (iterations >= newText.length) {
                     clearInterval(interval);
-                    glitchText.innerText = originalText; // Ensure it ends on the correct text
+                    glitchText.innerText = newText;
                 }
 
                 iterations += 1 / 3;
             }, 30);
+        };
 
-            glitchText.dataset.interval = interval;
-        });
+        // Initial animation
+        animateText(roles[0]);
+
+        // Cycle through roles
+        setInterval(() => {
+            roleIndex = (roleIndex + 1) % roles.length;
+            const newRole = roles[roleIndex];
+            glitchText.setAttribute('data-text', newRole);
+            animateText(newRole);
+        }, 4000); // Change every 4 seconds
+
+        // Keep hover effect if desired (optional, but might conflict with auto-cycle, so removing for cleaner UX)
     }
 
     // Typing Effect
