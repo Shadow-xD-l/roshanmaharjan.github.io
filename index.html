@@ -15,7 +15,14 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
+    
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Highlight.js for Code Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </head>
 
 <body>
@@ -213,6 +220,31 @@
     <footer>
         <p>&copy; 2025 Roshan Maharjan. All rights reserved.</p>
     </footer>
+
+    <!-- Chatbot Widget -->
+    <button id="chat-toggle-btn" class="chat-toggle-btn">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <div id="chat-widget" class="chat-widget hidden">
+        <div class="chat-header">
+            <h3><i class="fas fa-sparkles"></i> AI Assistant</h3>
+            <div class="header-controls">
+                <button id="chat-clear-btn" class="icon-btn" title="Clear Chat"><i class="fas fa-trash-alt"></i></button>
+                <button id="chat-close-btn" class="chat-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot-message">
+                Hello! I'm here to help you. Ask me anything!
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="chat-mic-btn" class="icon-btn" title="Voice Input"><i class="fas fa-microphone"></i></button>
+            <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 
     <script src="script.js?v=2"></script>
 </body>
